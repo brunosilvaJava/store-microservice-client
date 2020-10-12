@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: client-service
+  h2:
+    console:
+      settings:
+        trace: true
+
+server:
+  port: 6060
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eureka:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://auth:8088/user
